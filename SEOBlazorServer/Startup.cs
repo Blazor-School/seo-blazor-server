@@ -1,14 +1,9 @@
 using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using SEOBlazorServer.Data;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace SEOBlazorServer
 {
@@ -27,7 +22,8 @@ namespace SEOBlazorServer
         {
             services.AddRazorPages();
             services.AddServerSideBlazor();
-            services.AddSingleton<WeatherForecastService>();
+            services.AddSingleton<MetadataProvider>();
+            services.AddScoped<MetadataDataTransfer>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
