@@ -7,7 +7,7 @@ using System.Runtime.CompilerServices;
 
 namespace SEOBlazorServer.Data
 {
-    public class MetadataDataTransfer : INotifyPropertyChanged, IDisposable
+    public class MetadataTransferService : INotifyPropertyChanged, IDisposable
     {
         public event PropertyChangedEventHandler PropertyChanged;
 
@@ -42,7 +42,7 @@ namespace SEOBlazorServer.Data
             PropertyChanged?.Invoke(this, new(propertyName));
         }
 
-        public MetadataDataTransfer(NavigationManager navigationManager, MetadataProvider metadataProvider)
+        public MetadataTransferService(NavigationManager navigationManager, MetadataProvider metadataProvider)
         {
             _navigationManager = navigationManager;
             _metadataProvider = metadataProvider;

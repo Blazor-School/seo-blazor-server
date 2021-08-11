@@ -1,15 +1,15 @@
 ﻿@using SEOBlazorServer.Data
 @using System.ComponentModel
-@inject MetadataDataTransfer MetadataDataTransfer
+@inject MetadataTransferService MetadataTransferService
 @implements IDisposable
 
-<title>@MetadataDataTransfer.Title</title>
-<meta name="description" content="@MetadataDataTransfer.Description" />
+<title>@MetadataTransferService.Title</title>
+<meta name="description" content="@MetadataTransferService.Description" />
 
 @code {
     protected override void OnInitialized()
     {
-        MetadataDataTransfer.PropertyChanged += OnMetadataChanged;
+        MetadataTransferService.PropertyChanged += OnMetadataChanged;
     }
 
     private void OnMetadataChanged(object sender, PropertyChangedEventArgs e)
@@ -19,6 +19,6 @@
 
     public void Dispose()
     {
-        MetadataDataTransfer.PropertyChanged -= OnMetadataChanged;
+        MetadataTransferService.PropertyChanged -= OnMetadataChanged;
     }
 }

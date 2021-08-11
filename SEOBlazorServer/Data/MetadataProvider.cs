@@ -19,7 +19,7 @@ namespace SEOBlazorServer.Data
                 new()
                 {
                     Title = "About us",
-                    Description = "The DotNetPro team description."
+                    Description = "Email us: dotnetprotech@gmail.com - The DotNetPro team."
                 }
             }
         };
